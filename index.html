@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MiniShop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">MiniShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Admin Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                        <!-- Updated Link Button -->
+                        <a href="auth.html" id="auth-btn" class="btn btn-outline-light me-3">Login / Register</a>
+                        <button type="button" class="btn btn-warning position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                            <i class="bi bi-cart-fill"></i> Cart
+                            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-dark text-white py-5 text-center position-relative overflow-hidden">
+        <div class="container py-4 position-relative z-1">
+            <h1 class="display-4 fw-bold">Upgrade Your Shopping Experience</h1>
+            <p class="lead text-light mb-4">Discover high-quality electronics, fashionable apparel, and everyday accessories at unbeatable prices.</p>
+            <a href="products.html" class="btn btn-warning btn-lg fw-bold px-4">Shop All Products</a>
+        </div>
+    </header>
+
+    <!-- Carousel / Slider Section -->
+    <section class="container my-5">
+        <div id="offersCarousel" class="carousel slide rounded shadow overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#offersCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#offersCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#offersCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 380px;">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Electronics Sale">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+                        <h3>Exclusive Electronics Deals</h3>
+                        <p>Save up to 30% on premium audio gear, wearables, and smart devices.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height: 380px;">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Fashion Offers">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+                        <h3>New Season Fashion</h3>
+                        <p>Explore durable, stylish apparel and outerwear built for any occasion.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height: 380px;">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Accessories Special">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+                        <h3>Handcrafted Accessories</h3>
+                        <p>Timeless mechanical watches and genuine leather everyday gear.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#offersCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#offersCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container mb-5">
+        <h2 class="text-center fw-bold mb-4">Shop by Category</h2>
+        <div class="row g-3">
+            <div class="col-6 col-md-3">
+                <a href="products.html" class="text-decoration-none">
+                    <div class="card bg-white border-0 shadow-sm text-center py-4 h-100 card-hover">
+                        <i class="bi bi-laptop display-5 text-primary mb-2"></i>
+                        <h5 class="card-title text-dark fw-bold mb-0">Electronics</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="products.html" class="text-decoration-none">
+                    <div class="card bg-white border-0 shadow-sm text-center py-4 h-100 card-hover">
+                        <i class="bi bi-tag display-5 text-success mb-2"></i>
+                        <h5 class="card-title text-dark fw-bold mb-0">Clothing</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="products.html" class="text-decoration-none">
+                    <div class="card bg-white border-0 shadow-sm text-center py-4 h-100 card-hover">
+                        <i class="bi bi-watch display-5 text-warning mb-2"></i>
+                        <h5 class="card-title text-dark fw-bold mb-0">Accessories</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="products.html" class="text-decoration-none">
+                    <div class="card bg-white border-0 shadow-sm text-center py-4 h-100 card-hover">
+                        <i class="bi bi-lightning-charge display-5 text-danger mb-2"></i>
+                        <h5 class="card-title text-dark fw-bold mb-0">Footwear</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="container mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-0">Featured Products</h2>
+            <a href="products.html" class="btn btn-outline-primary">View All Products &rarr;</a>
+        </div>
+        <!-- Dynamic Featured Items Container -->
+        <div class="row g-4" id="featured-products-container"></div>
+    </section>
+
+    <!-- Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="cartOffcanvasLabel">Your Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cartItemsContainer" class="flex-grow-1 overflow-auto mb-3">
+                <p class="text-center text-muted mt-4">Your cart is empty.</p>
+            </div>
+            
+            <div class="border-top pt-3">
+                <div class="d-flex justify-content-between mb-1">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal" class="fw-bold">0 EGP</span>
+                </div>
+                <div class="d-flex justify-content-between mb-1 text-muted small">
+                    <span>Tax (14%):</span>
+                    <span id="cartTax">0 EGP</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2 text-muted small">
+                    <span>Shipping:</span>
+                    <span id="cartShipping">0 EGP</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3 fs-5">
+                    <strong>Final Total:</strong>
+                    <strong id="cartTotal" class="text-success">0 EGP</strong>
+                </div>
+                <button class="btn btn-warning w-100 fw-bold" onclick="checkout()">Checkout</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-1 fw-bold">MiniShop E-Commerce Project</p>
+            <p class="small text-muted mb-0">&copy; 2026 MiniShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page Logic Script -->
+    <script>
+        // Fallback products if localStorage is empty
+        const defaultProducts = [
+            {
+                id: 1,
+                title: "Wireless Headphones",
+                price: 25000,
+                category: "Electronics",
+                description: "High-fidelity wireless sound with active noise cancellation technology.",
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
+            },
+            {
+                id: 3,
+                title: "Smart Fitness Watch",
+                price: 18000,
+                category: "Electronics",
+                description: "Track health metrics, heart rate, and workouts with ease.",
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80"
+            },
+            {
+                id: 6,
+                title: "Minimalist Mechanical Watch",
+                price: 22000,
+                category: "Accessories",
+                description: "Precision automatic movement with stainless steel design.",
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80"
+            }
+        ];
+
+        // Safe JSON reader
+        function safeLoad(key, fallback) {
+            try {
+                const data = localStorage.getItem(key);
+                return (data && data.trim() !== "") ? JSON.parse(data) : fallback;
+            } catch (e) {
+                console.warn(`Corrupted storage found for ${key}. Resetting.`);
+                localStorage.removeItem(key);
+                return fallback;
+            }
+        }
+
+        // Dynamic State
+        let products = safeLoad('admin_products', defaultProducts);
+        let cart = safeLoad('cart', []);
+
+        const featuredContainer = document.getElementById('featured-products-container');
+        const cartCountBadge = document.getElementById('cart-count');
+
+        // Render products dynamically from local storage
+        function renderFeaturedProducts() {
+            if (!featuredContainer) return;
+            featuredContainer.innerHTML = '';
+
+            // Display up to the first 3 products from your app's products list
+            const featuredList = products.slice(0, 3);
+
+            if (featuredList.length === 0) {
+                featuredContainer.innerHTML = '<p class="text-center text-muted">No products available.</p>';
+                return;
+            }
+
+            featuredList.forEach(product => {
+                const col = document.createElement('div');
+                col.className = 'col-12 col-md-4';
+                col.innerHTML = `
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="${product.image}" class="card-img-top object-fit-cover" alt="${product.title}" style="height: 220px;">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold mb-0">${product.title}</h5>
+                                <span class="badge bg-secondary">${product.category}</span>
+                            </div>
+                            <p class="card-text text-muted small flex-grow-1">${product.description || ''}</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fs-5 fw-bold text-primary">${Number(product.price).toLocaleString()} EGP</span>
+                                <button class="btn btn-outline-primary btn-sm" onclick="addToCart(${product.id})">
+                                    <i class="bi bi-cart-plus me-1"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                featuredContainer.appendChild(col);
+            });
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            saveAndRenderCart();
+
+            const cartElement = document.getElementById('cartOffcanvas');
+            if (cartElement) {
+                const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(cartElement);
+                offcanvas.show();
+            }
+        }
+
+        function changeQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                saveAndRenderCart();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveAndRenderCart();
+        }
+
+        function saveAndRenderCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            if (cartCountBadge) cartCountBadge.textContent = totalCount;
+
+            const container = document.getElementById('cartItemsContainer');
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-center text-muted mt-4">Your cart is empty.</p>';
+                document.getElementById('cartSubtotal').textContent = '0 EGP';
+                document.getElementById('cartTax').textContent = '0 EGP';
+                document.getElementById('cartShipping').textContent = '0 EGP';
+                document.getElementById('cartTotal').textContent = '0 EGP';
+                return;
+            }
+
+            let html = '';
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                html += `
+                    <div class="d-flex align-items-center gap-3 mb-3 border-bottom pb-2">
+                        <img src="${item.image}" alt="${item.title}" style="width: 60px; height: 60px; object-fit: cover;" class="rounded">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0 text-truncate" style="max-width: 150px;">${item.title}</h6>
+                            <small class="text-muted">${Number(item.price).toLocaleString()} EGP</small>
+                            <div class="fw-bold mt-1">${Number(itemTotal).toLocaleString()} EGP</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <button class="btn btn-sm btn-outline-secondary px-2" onclick="changeQuantity(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="btn btn-sm btn-outline-secondary px-2" onclick="changeQuantity(${item.id}, 1)">+</button>
+                            <button class="btn btn-sm btn-danger px-2 ms-1" onclick="removeFromCart(${item.id})"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            const taxRate = 0.14; 
+            const shippingFee = 50;
+
+            const tax = subtotal * taxRate;
+            const shipping = subtotal > 0 ? shippingFee : 0;
+            const finalTotal = subtotal + tax + shipping;
+
+            document.getElementById('cartSubtotal').textContent = `${subtotal.toLocaleString()} EGP`;
+            document.getElementById('cartTax').textContent = `${tax.toLocaleString()} EGP`;
+            document.getElementById('cartShipping').textContent = `${shipping.toLocaleString()} EGP`;
+            document.getElementById('cartTotal').textContent = `${finalTotal.toLocaleString()} EGP`;
+        }
+
+        function checkout() {
+            if (cart.length === 0) return alert("Your cart is empty!");
+
+            let orders = safeLoad('admin_orders', []);
+
+            const newOrder = {
+                id: Date.now(),
+                items: cart,
+                totalItems: cart.reduce((sum, item) => sum + item.quantity, 0),
+                date: new Date().toLocaleDateString()
+            };
+            orders.push(newOrder);
+
+            localStorage.setItem('admin_orders', JSON.stringify(orders));
+
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify([]));
+
+            saveAndRenderCart();
+
+            alert("Checkout successful! Your order has been placed.");
+        }
+
+        // --- Initial Load ---
+        renderFeaturedProducts();
+        saveAndRenderCart();
+    </script>
+</body>
+</html>
